@@ -43,7 +43,7 @@ class Orbitsys( RequestSoft ):
 
             # Syntax Objective : Print terminal reference :
             print(
-                'Running, Kosmics Python\n'
+                'Orbiting Project\n'
                 'Browser Access - http://127.0.0.1:8000\n'
                 'Crl+c for uris command or Crl+z for stop'
             )
