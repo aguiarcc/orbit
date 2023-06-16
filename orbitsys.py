@@ -19,13 +19,13 @@ class Orbitsys( RequestSoft ):
         # Syntax Objective : Define time for each http request
         await asyncio.sleep( 0.01 )
         # Syntax Objective : Constructs request read object
-        soft = RequestSoft()
+        o_soft = RequestSoft()
         # Syntax Objective : Assign environment variable to a kosmics variable
-        soft.envs = environ
+        o_soft.envs = environ
         # Syntax Objective : Assign environment variable to a kosmics variable
-        soft.resp = start_response
+        o_soft.resp = start_response
         # Syntax Objective : Activate the read method
-        return soft.handle( soft.envs, soft.resp )
+        return [str(o_soft.handle( o_soft.envs, o_soft.resp )).encode('utf-8')]
 
     # Systax Objective : Send the request http to event loop 
     def wsginter( self, environ, start_response ):
