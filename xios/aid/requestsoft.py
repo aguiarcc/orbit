@@ -42,7 +42,7 @@ class RequestSoft( ResponseHeader, SessionManager ):
             # Syntax Objective : Instance the class e build object
             o_send = ResponseHeader()
             # Syntax Objective :  Send parameter for trigger response http
-            o_send.ok_text( v_resp )
+            o_send.http_200( v_resp )
             # Syntax Objective :  Print Message in Browser
             return ('Request Type : Api Soft')
 
@@ -52,16 +52,11 @@ class RequestSoft( ResponseHeader, SessionManager ):
             # Syntax Objective : Instance the class e build object
             o_send = ResponseHeader()
             # Syntax Objective :  Send parameter for trigger response http
-            o_send.ok_html( v_resp )
-
-            # Syntax Objective : Instance the class e build object
-            o_instance = SessionManager()
-            # Syntax Objective :  Send parameter for trigger response http
-            return (o_instance.handle( v_envs ))
+            o_send.http_200( v_resp )
 
         else:
 
             # Syntax Objective : Instance the class e build object
             o_send = ResponseHeader()
             # Syntax Objective :  Send parameter for trigger response http
-            o_send.ise_text( v_resp )
+            return ( o_send.http_500( v_resp ) )
